@@ -20,7 +20,7 @@ int divisioneINTERA(int a, int b){
 
 float divisioneDECIMALE(float a, float b){
     
-    int risultato;
+    float risultato;
     
     risultato = a/b;
     
