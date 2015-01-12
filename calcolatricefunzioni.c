@@ -3,7 +3,9 @@
 
 int potenza(int a, int b){
   int r,i;
+  //poniamo r (risultato) = 1 perchè se fosse 0 e andremo a moltiplicarlo per a il risultato sarebbe sempre 0
   r=1;
+  //usiamo un for per moltiplicare la base al nostro risultato fin quando il contatore diventa maggiore dell'esponente
   for(i=0;i<b;i++){
     r*=a;
   }
@@ -12,7 +14,7 @@ int potenza(int a, int b){
 }
 
 int divisioneINTERA(int a, int b){
-    
+
     int risultato;
     
     risultato = a/b;
@@ -23,7 +25,7 @@ int divisioneINTERA(int a, int b){
 
 
 float divisioneDECIMALE(float a, float b){
-    
+    //il risultato deve essere in float altrimenti non restituirà il valore giusto
     float risultato;
     
     risultato = a/b;
@@ -62,20 +64,20 @@ return ris;
   
     int main() {
     int a,b;
-    int ris, S, base, rpot , esponente,  i, r, sottrazione, moltiplicazione, risultatoparteintera, diviINT;
+    int  S, rpot , i, r, sottrazione, moltiplicazione, risultatoparteintera, diviINT;
     float  risultatopartedecimale, diviDEC, dd;
   
-    printf ("inserisci in primo valore a: \n");
+    printf ("Inserisci in primo valore a: \n");
     scanf ("%d", &a);
     
-    printf ("unserisci il secondo valore b: \n");
+    printf ("Inserisci il secondo valore b: \n");
     scanf ("%d", &b);
-    
-        printf ("premere 1 per fare la somma \n");
-        printf ("premere 2 per fare la sottrazione \n");
-        printf ("premere 3 per fare la moltiplicazione \n");
-        printf ("premere 4 per elevazione a potenza \n");
-        printf ("premere 5 per fare la divisione \n");
+    //puts è come printf soltanto che non ci si possono stampare valori di variabili ed è meno pesante come istruzione
+        puts ("Premere 1 per fare la somma \n");
+        puts ("Premere 2 per fare la sottrazione \n");
+        puts ("Premere 3 per fare la moltiplicazione \n");
+        puts ("Premere 4 per elevazione a potenza \n");
+        puts ("Premere 5 per fare la divisione \n");
         scanf ("%d", &S);
     
     switch(S){
@@ -103,9 +105,11 @@ return ris;
             break;
         
         case 5:
+             //ho aggiunto queste istruzioni per poter dividere la parte decimale da quella intera
             diviINT = divisioneINTERA(a,b);
             diviDEC = divisioneDECIMALE(a,b);
             dd=diviINT-diviDEC;
+            //ho moltiplicato dd, il nostro risultato, per -1 dato che veniva negativo
             dd*=-1;
             printf("il risultato della divisione parte intera: %d parte decimale: %5.4f ", diviINT, dd);
             //scrovere %5.4f vuol dire che dopo la virgola mette 4 0 
@@ -121,6 +125,6 @@ return ris;
         break;
         
     }
-    system("pause");
+    
     return (EXIT_SUCCESS);
 }
