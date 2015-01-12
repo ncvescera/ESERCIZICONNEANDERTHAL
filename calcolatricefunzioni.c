@@ -1,9 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int potenza(int base, int esponente){
-  
-  
+int potenza(int a, int b){
+  int r,i;
+  r=1;
+  for(i=0;i<b;i++){
+    r*=a;
+  }
+  return r;
       
 }
 
@@ -58,7 +62,7 @@ return ris;
   
     int main() {
     int a,b;
-    int ris, S, base, risultatopotenza , esponente,  i, r, sottrazione, moltiplicazione, risultatoparteintera, diviINT;
+    int ris, S, base, rpot , esponente,  i, r, sottrazione, moltiplicazione, risultatoparteintera, diviINT;
     float  risultatopartedecimale, diviDEC, dd;
   
     printf ("inserisci in primo valore a: \n");
@@ -87,32 +91,34 @@ return ris;
                     break;
        
         
-            break;
+           
         case 3:
             moltiplicazione = molti(a,b);
             printf("il risultato della moltiplicazione e' : %d ", moltiplicazione);
             break;
-            
+        case 4:
+           
+            rpot = potenza(a,b); 
+            printf("%d^%d=%d\n",a,b,rpot);
+            break;
+        
         case 5:
             diviINT = divisioneINTERA(a,b);
             diviDEC = divisioneDECIMALE(a,b);
             dd=diviINT-diviDEC;
             dd*=-1;
             printf("il risultato della divisione parte intera: %d parte decimale: %5.4f ", diviINT, dd);
-            break;
-           
+            //scrovere %5.4f vuol dire che dopo la virgola mette 4 0 
+            //ad esempio se abbiamo il numero 6,78900000 lui scriverà 6,7890
+            
             break;
             
-         case 4:
-           
-            risultatopotenza = potenza(base,esponente); 
-            printf("%d^%d=%d\n", a, b, risultatopotenza);
-            break;
+        
             
         
         default:
             printf("non riconosciuto\n");
-        
+        break;
         
     }
     system("pause");
