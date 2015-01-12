@@ -56,10 +56,10 @@ return ris;
     
 }
   
-    int main(int argc, char** argv) {
-   
+    int main() {
+    int a,b;
     int ris, S, base, risultatopotenza , esponente,  i, r, sottrazione, moltiplicazione, risultatoparteintera, diviINT;
-    float a, b, risultatopartedecimale, diviDEC;
+    float  risultatopartedecimale, diviDEC;
   
     printf ("inserisci in primo valore a: \n");
     scanf ("%d", &a);
@@ -113,6 +113,6 @@ return ris;
         
         
     }
-
+    system("pause");
     return (EXIT_SUCCESS);
 }
