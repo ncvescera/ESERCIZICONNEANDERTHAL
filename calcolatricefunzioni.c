@@ -59,7 +59,7 @@ return ris;
     int main() {
     int a,b;
     int ris, S, base, risultatopotenza , esponente,  i, r, sottrazione, moltiplicazione, risultatoparteintera, diviINT;
-    float  risultatopartedecimale, diviDEC;
+    float  risultatopartedecimale, diviDEC, dd;
   
     printf ("inserisci in primo valore a: \n");
     scanf ("%d", &a);
@@ -96,7 +96,9 @@ return ris;
         case 5:
             diviINT = divisioneINTERA(a,b);
             diviDEC = divisioneDECIMALE(a,b);
-            printf("il risultato della divisione parte intera: %d parte decimale: %f ", diviINT, diviDEC);
+            dd=diviINT-diviDEC;
+            dd*=-1;
+            printf("il risultato della divisione parte intera: %d parte decimale: %5.4f ", diviINT, dd);
             break;
            
             break;
